@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if page == 'addrecord' %}
+<h1>Add Record</h1>
+{% else %}
+<h1>Update Record</h1>
+{% endif %}
+<br>
+<div class="col-md-6 offset-md-3"></div>
+     <form action="" method="POST">
+          {% csrf_token %}
+
+          {{form.as_p}}
+          <br>
+
+          {% if page == 'addrecord' %}
+          <button type="submit" class="btn btn-secondary">Add Record</button>
+          {% else %}
+          <button type="submit" class="btn btn-secondary">Update Record</button>
+          {% endif %}
+     </form>
+</div>
+
+{% endblock %}
